@@ -1,0 +1,48 @@
+\section{Thesis Problem}
+Consider an number $M \in \mathbb{Z}$ and its prime factorisation $M=P_1^{e_1}P_2^{e_2} . . . P_k^{e_k}$ where each $P_i \rfloor_{i=1}^k$ and $e_i \rfloor_{i=1}^k$ are prime number and their integer exponent respectively, then find each primes of $M$: $P_i$'s. It is called integer factorisation problem.
+
+The uniqueness of prime factorization suggests that the prime factors $P_i$'s are unique to integer M.\ref{ch:intro} Integer factorization problem is a difficult problem in number theory. Based on its hardness, it has some important applications, which we will discuss later in the study.
+
+\subsection{Problem Re-scaling}
+Here, we downscale the problem to a simpler problem, yet with equal complexity and output.
+\begin{conj}
+    An integer $M=P_1^{e_1}P_2^{e_2} . . . P_k^{e_k}$ as its prime decomposition can be expressed as an integer $I= P.Q$ 
+\end{conj}
+\begin{proof}
+    Suppose an integer $I= P.Q$ where $P$ is a prime number and $Q \in \mathbb{Z}$
+    \\ we have, $M=P_1^{e_1}P_2^{e_2} . . . P_k^{e_k}$
+    \\we can rewrite it as  $M=P_1 P_1^{e_1 -1}P_2^{e_2} . . . P_k^{e_k}$
+    \\let $P=P_1$, $ Q= P_1^{e_1 -1}P_2^{e_2} . . . P_k^{e_k}$
+    \\ $M=P.Q$
+    \\Hence $M \equiv I$
+\end{proof}
+
+From the above conjecture, we can represent $M$ as $I=P.Q$. And once we find an efficient algorithm to find a prime factor of I, say P, we can use the same algorithm to decompose Q if it is a composite number. Hence we reduce the problem of finding prime factors of an integer to a problem to develop an efficient algorithm to find a single prime. Let us assume such an algorithm exists and name it Algorithm-S.
+\\The algorithm for integer factorisation is:
+
+\begin{algorithm}[H]
+  \KwData{An integer to be factored: M}
+  \KwResult{Prime factors: $P_1$, $P_2$ , . . . $P_k $ }
+  initialization: $I = M$, i = 1\;
+  \While{($I \neq 1$)}{
+      Apply Algorithm-S on I to find $P_i$\;
+      $Q= I/P_i$\;
+      \While{(Q mod $P_i$ =0)}{
+            temp = $I/P_i$\;
+      }
+      $I= temp$ \;
+      i=i+1\;
+    }
+  \caption{Algorithm for integer factorisation}
+\end{algorithm}
+ \section{Objective}
+ The aim of this thesis is to explore Shor's algorithm for factoring a composite integer and implement it on a quantum computer.
+ Following objectives are set to meet the aim.
+ \begin{enumerate}
+     \item Study workings of Shor's algorithm
+     \item Calculate the probability of success of the algorithm
+     \item Compute complexity of the algorithm
+     \item Construct a circuit for implementation of the algorithm
+     \item Run algorithm on a quantum simulator and a quantum computer
+     \item Study application of Shor's algorithm in breaking RSA cryptography
+ \end{enumerate}

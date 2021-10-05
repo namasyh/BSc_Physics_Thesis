@@ -1,0 +1,187 @@
+
+\RequirePackage{etex}
+
+\usepackage{tabu}
+\usepackage{geometry}
+\usepackage{wrapfig}
+\usepackage{minitoc}
+
+\usepackage{amsmath,amssymb , amsthm, physics}
+\usepackage[acronym]{glossaries}
+\usepackage{braket, float,subcaption}
+
+\usepackage[ruled,vlined]{algorithm2e}
+% \usepackage{algorithm}
+% \usepackage[noend]{algpseudocode}
+
+\usepackage{biblatex}[style=phys,sorting= anty]
+\addbibresource{reference.bib}
+
+\usepackage{listings}
+\usepackage{dirtytalk}
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+
+
+%multiple columns can be created 
+\usepackage{multicol}
+
+\usepackage{xcolor}
+\usepackage{subcaption}
+
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conj}{Claim}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\geometry{a4paper, tmargin=1in, rmargin=1in, bmargin=1in, lmargin=1.4in}
+
+
+\usepackage{cryptocode}
+
+\usepackage{sectsty}
+
+% ....Chapter, section, subsection font editing
+% \chapterfont{\fontsize{14pt}{14pt} \centering}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\titleformat{\chapter}
+{\fontsize{14pt}{14pt}\selectfont\centering \bfseries}
+{ \chaptertitlename \thechapter : }{0.5em}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{40pt}
+
+ 
+
+\titleformat{\section}
+{\fontsize{12pt}{12pt}\selectfont \bfseries}
+{\thesection}{0.5em}{}
+
+\titleformat{\subsection}
+{\fontsize{12pt}{12pt}\selectfont \bfseries}
+{\thesection}{0.5em}{}
+%%%%
+
+
+
+% sets roll number , name and title
+\newcommand{\rollno}{4080023}
+\newcommand{\regno}{5-2-408-273-2016}
+\newcommand{\name}{Aman Ganeju}
+\newcommand{\topic}{IMPLEMENTATION OF SHOR'S ALGORITHM ON A QUANTUM COMPUTER FOR FACTORIZATION OF AN INTEGER 15}
+\newcommand{\guidea}{Om Krishna Suwal, PhD.}
+\newcommand{\guideb}{Dibakar Sigdel, PhD.}
+\newcommand{\guidec}{Shree Krishna Bhattarai, PhD.}
+\newcommand{\hod}{Mira Prajapati}
+
+\usepackage{fancyhdr}
+
+\pagestyle{plain}
+% \fancyhf{}
+
+% \fancyhead[RE,LO]{\topic}
+% \fancyfoot[RE,LO]{\leftmark}
+% \fancyfoot[LE,RO]{\thepage}
+
+% \renewcommand{\headrulewidth}{1pt}
+% \renewcommand{\footrulewidth}{1pt}
+
+
+\renewcommand*\contentsname{\hfill\textbf{\textbf{\fontsize{16pt}{24pt}\selectfont TABLE OF CONTENTS}} \hfill}
+% \renewcommand{\bibname}{REFERENCES}
+\AtBeginDocument{\renewcommand{\bibname}{References}}
+\setcounter{tocdepth}{1}
+\setlength{\tabcolsep}{2pt}
+
+% for integrate python file
+\usepackage{color} 
+\usepackage{listings} 
+\usepackage{setspace} 
+ 
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5} 
+\definecolor{Numbers}{rgb}{0.5,0,0} 
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5} 
+\definecolor{Keywords}{rgb}{0,0,1} 
+\definecolor{self}{rgb}{0,0,0} 
+\definecolor{Strings}{rgb}{0,0.63,0} 
+\definecolor{Comments}{rgb}{0,0.63,1} 
+\definecolor{Backquotes}{rgb}{0,0,0} 
+\definecolor{Classname}{rgb}{0,0,0} 
+\definecolor{FunctionName}{rgb}{0,0,0} 
+\definecolor{Operators}{rgb}{0,0,0} 
+\definecolor{Background}{rgb}{0.98,0.98,0.98} 
+ 
+\lstdefinelanguage{Python}{ 
+    numbers=left, 
+    numberstyle=\footnotesize, 
+    numbersep=1em, 
+    xleftmargin=1em, 
+    framextopmargin=2em, 
+    framexbottommargin=2em, 
+    showspaces=false, 
+    showtabs=false, 
+    showstringspaces=false, 
+    frame=l, 
+    tabsize=4, 
+    % Basic 
+    basicstyle=\ttfamily\small\setstretch{1}, 
+    backgroundcolor=\color{Background}, 
+    % Comments 
+    commentstyle=\color{Comments}\slshape, 
+    % Strings 
+    stringstyle=\color{Strings}, 
+    morecomment=[s][\color{Strings}]{"""}{"""}, 
+    morecomment=[s][\color{Strings}]{'''}{'''}, 
+    % keywords 
+    morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert}, 
+    keywordstyle={\color{Keywords}\bfseries}, 
+    % additional keywords 
+    morekeywords={[2]@invariant,pylab,numpy,np,scipy}, 
+    keywordstyle={[2]\color{Decorators}\slshape}, 
+    emph={self}, 
+    emphstyle={\color{self}\slshape}, 
+    % 
+} 
+\newcommand*\lstinputpath[1]{\lstset{inputpath=#1}}
+\lstinputpath{ {./programs/} }
+
+%%%%
+
+\linespread{1.25} 
+
+\input{Glossaries}
+
+\usepackage{multirow}

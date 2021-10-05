@@ -1,0 +1,85 @@
+\documentclass[12pt]{report}
+
+\input{Predocument}
+
+\begin{document}
+
+\include{mytitle}
+
+\pagenumbering{roman}
+\thispagestyle{plain}
+
+\addcontentsline{toc}{chapter}{DECLARATION}
+\include{Declaration}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{RECOMMENDATION}
+\include{Recommendation}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{LETTER OF APPROVAL}
+\include{letterofapproval}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{CERTIFICATE OF ACCEPTANCE}
+\include{Certificateofacceptance}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{ACKNOWLEDGEMENT}
+\include{acknowledgement}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+
+
+\input{abstract}
+
+
+\tableofcontents
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+%\cleardoublepage
+%\addcontentsline{toc}{Chapter}{Listing}
+% \lstlistoflistings
+\printglossary[type=\acronymtype]
+
+\cleardoublepage
+
+\chapter{Introduction} \label{ch:intro}
+\pagenumbering{arabic}
+\pagestyle{plain}
+\input{Chapter1}
+
+\chapter{ Background} \label{ch:background}
+\input{Chapter2}
+
+\chapter{Thesis Problem and Objective} \label{ch: thesis problem and objective}
+\input{Chapter3}
+
+\chapter{Method} \label{ch:main_chapter1}
+\input{Chapter4}
+
+\chapter{Application} \label{ch:application}
+\input{Chapter5}
+
+\chapter{Method of implementation} \label{ch:method_implementation}
+\input{Chapter6}
+
+\chapter{Results} \label{ch:results}
+\input{Chapter7}
+
+\chapter{Discussions}\label{ch: Discussions}
+\input{Chapter8}
+
+\chapter{Conclusion} \label{ch:conclusion}
+\input{Conclusion}
+
+\printbibliography
+
+\chapter{Appendix} \label{ch:appendix}
+\input{Appendix}
+
+\end{document}          

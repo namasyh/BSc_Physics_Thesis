@@ -1,0 +1,17 @@
+\section[Cryptography]{Threat to RSA cryptography}
+Securing information transmission and communication by scrambling(encryption) and unscrambling(decryption) the information or signal using a key(cipher) is cryptography. It aims in reducing the possibility of interception of a message by an unintended party and maintain the confidentiality of the message. Private key cryptography and public-key cryptography are some popular categories of cryptography. RSA cryptography is a public-key cryptosystem.
+RSA cryptosystem is one of the first public-key cryptographic systems. It was developed by Ronald Rivest, Adi Shamir, and Leonard Adleman in 1977.\cite{chen20007}It is based on the difficulty of the prime factorization problem. This cryptosystem is used in different web browsers, emails, banking transactions, and for secured communication. It is implemented in many cryptographic libraries like OpenSSL, wolfCrypt, and others.
+
+It uses a large composite integer I with prime decomposition $I=p.q$. A public key composed of the integer I and a number a: $GCD(I,(p-1)(q-1))=1$ is shared as between Alice and Bob over a public channel. Alice uses the public key(a, I) to encrypt the message as follows:
+\\Say 'm' be the message(binary) and s be the encrypted message.
+$$s=m^a mod\,I$$
+Bob generates a private key using public keys and factors of I as
+$$ p= a.b mod (p-1)(q-1)$$
+Bob uses the private key: K=(b, N) to decrypt the message.
+$$m= c^b mod\: I$$
+
+As we can see, anybody can encrypt the message using the publicly available public key. Whereas only Bob who has the private key can only decrypt the message, given the integer $I$ is large enough.
+
+Hence, the RSA cryptosystem solely relies on the assumption that large integer factorization is not computationally feasible over some large time. As we have discussed earlier, factoring a large number is very difficult. The largest RSA number to be factored till now is RSA-250, which is a 250 digit long number with 829 bits. It took roughly 2700 core-years, using Intel Xeon Gold 6130 CPUs.\cite{rsa250} Almost all currently used RSA cryptosystem uses 1024 bit or larger numbers like RSA-2048 and RSA-4096. 
+
+Shor's algorithm factors pose a threat to RSA cryptosystem since it factors integers in polynomial time with bounded probability. Researchers argue a 2018 bit key that takes 300 trillion years for a classical computer to break, can be broken by a 4099 qubit quantum computer in about 10 seconds.(Zhang et al., 2020) \cite{zhang_miranskyy_rjaibi_2021}.  Hence if such a quantum computer exists, it would likely deem information security involving RSA cryptosystem useless. Information like emails and banking transactions would not seem to be as secure as it is.

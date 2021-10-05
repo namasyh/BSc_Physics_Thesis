@@ -1,0 +1,46 @@
+Upon execution on simulator and quantum computer, it was observed that simulator took less time for all the process: transpiling, validating and running, than for quantum computers. On the simulator, it took 903 milliseconds(ms) for validating, 241 ms in queuing, and 41 ms to run the circuit for 8000 shots. It took a total of 3.8 seconds to completely execute the circuit.
+Whereas for the quantum system, it took a total of 24 minutes and 52.1 seconds to execute the circuit. Queuing took most of the time while sending the circuit. It took 957 ms for validating, 23 minutes, and 58.9 seconds for queuing. It took 20.7 seconds to run the circuit for 8000 shots on $ibmq\_16\_melbourne$. 
+
+The result counts upon running the circuit on the simulator and quantum system is as shown in table below.
+\begin{table}[h]
+\begin{tabular}{|c|c|c|}
+\hline
+Basis States & Simulator counts & Quantum counts \\ \hline
+0000         & 2001             & 875            \\ \hline
+0001         & 0                & 511            \\ \hline
+0010         & 0                & 542            \\ \hline
+0011         & 0                & 336            \\ \hline
+0100         & 1990             & 713            \\ \hline
+0101         & 0                & 394            \\ \hline
+0110         & 0                & 456            \\ \hline
+0111         & 0                & 282            \\ \hline
+1000         & 1998             & 846            \\ \hline
+1001         & 0                & 460            \\ \hline
+1010         & 0                & 479            \\ \hline
+1011         & 0                & 321            \\ \hline
+1100         & 2011             & 678            \\ \hline
+1101         & 0                & 397            \\ \hline
+1110         & 0                & 428            \\ \hline
+1111         & 0                & 282            \\ \hline
+\end{tabular}
+\end{table}
+
+We used histogram plots to analyze the output. The histogram plots of the output is as shown in the figure(\ref{fig: simulator result}, \ref{fig: quantum result})
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/histogram_result_fermat_sim.png}
+  \caption{Results upon running circuit on quantum simulator }
+  \label{fig: simulator result}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/histogram_result_fermat_qc.png}
+  \caption{Results upon running circuit on quantum computer}
+  \label{fig: quantum result}
+\end{figure}
+
+We could see the similarities between the result on the local simulator and quantum computer. We observed states:$\{0000\},\{0100\},\{1000\}$ and $\{1100\}$ have the maximum likelihood of observation on both the results. These binaries correspond to decimal values 0, 4, 8 and 12. We analyzed the output values classically to obtain the period of MEF and compute the factor of integer 15. 
+
+For final classical computation, we took GCD of the output values, that is, 4. Hence, the period of MEF with $z=2$ and $I=15$ is $a=4$.
+The factors was computed from period as $GCD(2^2+1,15) = 5$ and $GCD(2^2-1,15) = 3$. Thus, we obtained values 3 and 5. We checked if these values are factors by dividing $I$ by these values. We get the positive result after checking as well. Hence we obtained an correct result for the implementation.
